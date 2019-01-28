@@ -39,4 +39,61 @@ const siteContent = {
 
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+logo.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let i = 1;
+let navitems = document.querySelectorAll("header nav a");
+navitems.forEach( element => {
+  element.style.color = "green";
+  element.textContent = siteContent["nav"][`nav-item-${i}`];
+  i++;
+});
+
+let history_btn = document.createElement("a");
+let text = document.createTextNode("History");
+nav_items = document.getElementsByTagName("nav")[0];
+history_btn.appendChild(text);
+nav_items.prepend(history_btn);
+nav_items.firstChild.style.color = "green";
+
+let home_btn = document.createElement("a");
+text = document.createTextNode("Home");
+home_btn.appendChild(text);
+nav_items.prepend(home_btn);
+nav_items.firstChild.style.color = "green";
+
+let cta_image = document.getElementById("cta-img");
+cta_image.setAttribute('src', siteContent["cta"]["img-src"]);
+
+let cta_text = document.getElementsByClassName("cta-text");
+cta_text[0].children[0].textContent = siteContent["cta"]["h1"];
+cta_text[0].children[1].textContent = siteContent["cta"]["button"];
+
+let top_content = document.getElementsByClassName("text-content");
+top_content[0].children[0].textContent = siteContent["main-content"]["features-h4"];
+top_content[0].children[1].textContent = siteContent["main-content"]["features-content"];
+
+top_content[1].children[0].textContent = siteContent["main-content"]["about-h4"];
+top_content[1].children[1].textContent = siteContent["main-content"]["about-content"];
+
+top_content[2].children[0].textContent = siteContent["main-content"]["services-h4"];
+top_content[2].children[1].textContent = siteContent["main-content"]["services-content"];
+
+top_content[3].children[0].textContent = siteContent["main-content"]["product-h4"];
+top_content[3].children[1].textContent = siteContent["main-content"]["product-content"];
+
+top_content[4].children[0].textContent = siteContent["main-content"]["vision-h4"];
+top_content[4].children[1].textContent = siteContent["main-content"]["vision-content"];
+
+let middle_img = document.getElementById("middle-img");
+middle_img.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+let contact = document.getElementsByClassName("contact");
+contact[0].children[0].textContent = siteContent["contact"]["contact-h4"];
+contact[0].children[1].textContent = siteContent["contact"]["address"];
+contact[0].children[2].textContent = siteContent["contact"]["phone"];
+contact[0].children[3].textContent = siteContent["contact"]["email"];
+
+let footer = document.getElementsByTagName("footer");
+footer[0].children[0].textContent = siteContent["footer"]["copyright"];
+
